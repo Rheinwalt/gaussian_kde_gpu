@@ -41,7 +41,7 @@ def gaussian_kde_gpu(p, q, threadsperblock=64):
     d_p = cuda.to_device(p)
     d_q = cuda.to_device(q)
     d_bwinv = cuda.to_device(bwinv)
-    blockspergrid = (n + threadsperblock - 1) // threadsperblock
+    blockspergrid = m // threadsperblock + 1
     cuda_kernel[blockspergrid, threadsperblock](d_est, d_p, d_q,
                                                 n, m, d, d_bwinv, f)
     est = d_est.copy_to_host()
