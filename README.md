@@ -7,7 +7,7 @@ The provided function `gaussian_kde_gpu()` is a simplified version of Scipy's `g
 ``` {.python .numberLines}
 from gaussian_kde_gpu import gaussian_kde_gpu
 
-density = = gaussian_kde_gpu(p, q)
+density = gaussian_kde_gpu(p, q)
 ```
 
 For more details see [tutorial](GPU_Gaussian_kernel_density_estimation.ipynb).
